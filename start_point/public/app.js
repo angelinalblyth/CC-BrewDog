@@ -47,7 +47,6 @@ const handleSelected = function(beers){
 const showBeerDetails = function(beer){
   var beerDetails = document.getElementById('beerDetails');
   var pTag = document.createElement('p');
-  console.log(beer);
   pTag.innerText = beer.name;
   beerDetails.appendChild(pTag);
 

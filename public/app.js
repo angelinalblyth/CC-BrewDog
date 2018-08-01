@@ -24,15 +24,15 @@ const populateList = function(beers){
   });
 
   var storedBeer = localStorage.getItem('selected_beer');
-var beerDetails = document.getElementById('beerDetails');
-if(storedBeer){
+  var beerDetails = document.getElementById('beerDetails');
+  if(storedBeer){
   beerToDisplay = JSON.parse(storedBeer);
   console.log(storedBeer);
   var pTag = document.createElement('p');
   pTag.innerText = beerToDisplay.name;
   beerDetails.appendChild(pTag);
 }
-}
+};
 
 
 const handleSelected = function(beers){
@@ -53,8 +53,7 @@ const showBeerDetails = function(beer){
 
   var jsonString = JSON.stringify(beer);
   localStorage.setItem('selected_beer', jsonString);
-
-}
+};
 
 var app = function(){
   const url = 'https://api.punkapi.com/v2/beers';

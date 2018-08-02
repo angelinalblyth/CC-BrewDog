@@ -1,5 +1,5 @@
 main{
-  width: 300px;
+  width: 600px;
   margin: 0 auto;
 }
 
@@ -11,11 +11,16 @@ input{
   margin: 10px;
 }
 
-.album{
+/* .album{
   padding: 5px;
-}
+} */
 
 img{
-  width: 250px;
+  width: 200px;
   height: 500px;
+  margin-left: 200px;
+}
+
+body{
+  background-color: #30B4D9;
 }

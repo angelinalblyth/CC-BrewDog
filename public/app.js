@@ -46,10 +46,11 @@ const handleSelected = function(beers){
 
 const showBeerDetails = function(beer){
   var beerDetails = document.getElementById('beerDetails');
-  var pTag = document.createElement('p');
-  console.log(beer);
-  pTag.innerText = beer.name;
-  beerDetails.appendChild(pTag);
+
+  var beerName = document.createElement('h1');
+  //console.log(beer);
+  beerName.innerText = beer.name;
+  beerDetails.appendChild(beerName);
 
 
   var imgHolder = document.createElement('img');
@@ -57,16 +58,32 @@ const showBeerDetails = function(beer){
   beerDetails.appendChild(imgHolder);
 
   var abv = document.createElement('p');
-  abv.innerText = beer.abv;
+  abv.innerText = `Abv: ${beer.abv}`;
   beerDetails.appendChild(abv);
 
   var description = document.createElement('p');
   description.innerText = beer.description;
   beerDetails.appendChild(description);
 
+  var ingredientsMalts = document.createElement('p');
+  ingredientsMalts.innerText = beer.ingredients.malt;
+  beerDetails.appendChild(ingredientsMalts);
+
+  var ingredientsHops = document.createElement('p');
+  ingredientsHops.innerText = beer.ingredients.hop;
+  beerDetails.appendChild(ingredientsHops);
+
+  var ingredientsYeast = document.createElement('p');
+  ingredientsYeast.innerText = beer.ingredients.yeast;
+  beerDetails.appendChild(ingredientsYeast);
+
   var jsonString = JSON.stringify(beer);
   localStorage.setItem('selected_beer', jsonString);
 };
+
+const searchBeers = function(beers){
+
+}
 
 var app = function(){
   const url = 'https://api.punkapi.com/v2/beers';
